@@ -1,0 +1,40 @@
+#include <stdio.h>
+int main(){
+ int idade, qtdRet, qtdNeutro, qtdProt, nota, idadeTotal, media;
+ qtdRet=0;
+ idade=0;
+ qtdRet=0;
+ qtdNeutro=0;
+ qtdProt=0;
+ nota=0;
+ idadeTotal=0;
+ media=0;
+ for(int i = 1; i <= 5; i++){
+ printf("Escreva idade: \n");
+ scanf("%i",&idade);
+ fflush(stdin);
+ printf("Escreva Nota: \n");
+ scanf("%i",&nota);
+ fflush(stdin);
+ if (nota >= 9 && nota <=10 ) {
+ qtdProt++;
+ idadeTotal = idadeTotal + idade;
+ }
+ else if (nota >= 7 && nota <=8) {
+ qtdNeutro++;
+ }
+ else if (nota >=0 && nota <=6){
+ qtdRet++;
+ }
+ else {
+ printf("erro, refaça \n");
+ i--;
+ }
+ }
+ media = idadeTotal/qtdProt;
+ printf("promotores: %i%% \n", qtdProt);
+ printf("retratores: %i%% \n", qtdRet);
+ printf("neutros: %i%% \n", qtdNeutro);
+ printf("Media de idade dos promotores: %i \n", media);
+ return 0;
+}
